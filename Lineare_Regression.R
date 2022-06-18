@@ -4,7 +4,6 @@ model <- lm(Abischni~IQ, data = daten)
 abline(model, col="red")
 summary(model)
 
-
 # übersicht der daten
 summary(data)
 

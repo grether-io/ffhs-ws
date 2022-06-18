@@ -16,7 +16,7 @@ barplot(testdf$rand,xlab="ID", ylab="Messwert")
 hist(testdf$age, breaks=c(seq(10,50,5)))
 
 ## Bivariate Diagramme
-# Damit Variablen einander gegen??bergestellt werden k??nnen
+# Damit Variablen einander gegenübergestellt werden können
 barplot(
   table(
     testdf$age,
@@ -43,10 +43,10 @@ plot(
 # auch z.B. bei der linearen Regression vor und bedeutet, 
 # dass "y" in Abh??ngigkeit von "x" dargestellt (oder modelliert) wird.
 
-
 ## Diagnostische Diagramme
 qqnorm(
-  testdf$age
+  testdf$age,
+  
 )
 qqline(
   testdf$age
@@ -66,3 +66,18 @@ quantile(x, probs = seq(0, 1, 0.25), na.rm = FALSE, names = TRUE, type = 7, …)
 #names: logical; if true, the result has a names attribute. Set to FALSE for speedup with many probs.
 
 #type: an integer between 1 and 9 selecting one of the nine quantile algorithms detailed below to be used.
+
+#------------------------------------------------------------------------------------------
+qqnorm(
+  daten$groesse,
+  main = "",
+  xlab = "Quantile der Std.norm.vert.",
+  ylab = "Quantile der Körpergrösse",
+  pch = 20 # kleine Kreisscheibe statt grosser Kreis
+)
+# Der folgende Befehl qqline() fügt dem vorangegangenen
+# Diagramm eine Gerade durch das 1. und das 3. Quartil
+# der Std.normalverteilung und von "groesse" hinzu
+qqline(
+  daten$groesse
+)

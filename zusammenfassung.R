@@ -1,4 +1,3 @@
-### Modulschlussprüfung WS ###
 # Variable zuweisen
 alpha<-5
 
@@ -193,7 +192,7 @@ str(daten1)
 # Einzelne Zeile ausgeben
 daten1$PatNr
 
-# neue Spalte hinzufuegen Bsp: Alter von zuf?lligen Zahlen von 18-30
+# neue Spalte hinzufuegen Bsp: Alter von zufälligen Zahlen von 18-30
 daten1$Alter <- round(runif(20,18,30))
 daten1
 
@@ -390,17 +389,17 @@ datensatz1
 
 ## Beschreibung plot() Variablen -----------------
 # Option	              Beschreibung
-# main = "string"	      Titel (?berschrift) der Grafik
+# main = "string"	      Titel (Überschrift) der Grafik
 # sub = "string"	      Untertitel
 # xlab = "string"	      x-Achsenbeschriftung (label)
 # ylab = "string"	      y-Achsenbeschriftung
 # xlim = c(x1, x2)	      Wertebereich der x-Achse (von - bis)
 # ylim = c(y1, y2)	      Wertebereich der y-Achse; c(y2, y1) um die Achse "umzudrehen"
-# axes = TRUE/FALSE	      Achsen anzeigen oder unterdr?cken
-# ann = TRUE/FALSE	      unterdr?ckt Beschriftungen (Titel, labels), f?r "annotation"
+# axes = TRUE/FALSE	      Achsen anzeigen oder unterdrücken
+# ann = TRUE/FALSE	      unterdrückt Beschriftungen (Titel, labels), für "annotation"
 # frame.plot = TRUE/FALSE	Rahmen anzeigen oder nicht
 # type = "."	            l = Linien, p = Punkte, b = Linien + Punkte, 
-#                         n = keine (nur Achsen), o = ?berlagerung, 
+#                         n = keine (nur Achsen), o = überlagerung, 
 #                         h = vertikale Verbindungen zur x-Achse (histogrammartig), 
 #                         s = Treppenfunktion
 
@@ -491,7 +490,7 @@ h <- prop.table(H)
 h <- round(h, 3) # das Ergebnis runden wir noch auf 3 Kommastellen.
 h
 
-# Aufsummieren der relativen Haeufigkeiten f?r die Verteilungsfunktion
+# Aufsummieren der relativen Haeufigkeiten für die Verteilungsfunktion
 AufsummierenDerHaeuigkeiten <- function(data){
   n<-length(data)
   count<-1
@@ -653,7 +652,7 @@ round(IQR(airquality$Temp,na.rm=T,type=7))
 # Standardabweichung ---------------------------------------
 # Die Standardabweichung einer Stichprobe:
 sd(airquality$Temp) # direkt die Standardabweichung berechnen
-sqrt(var(airquality$Temp)) # ?ber die Varianz die Spannweite berechnen
+sqrt(var(airquality$Temp)) # über die Varianz die Spannweite berechnen
 
 find_sd_sample <- function(x) { # Mittels einer Funktion 
   sqrt(sum((x-mean(x))^2/(length(x)-1)))
@@ -747,10 +746,10 @@ hist(airquality$Temp)
 # dnorm gibt die Dichte.
 # pnorm Gibt die Verteilungsfunktion. 
 # qnorm gibt die Quantile.
-# rnorm generiert eine zuf?lligen Datensatz mit Normalverteilung.
+# rnorm generiert eine zufälligen Datensatz mit Normalverteilung.
 
 # dnorm Wahrscheinlichkeitsdichte f(x|mean, sd) ----
-# Werte abf?llen
+# Werte abfüllen
 GesuchterWert_X <- 3
 GesuchterWert_A <- 0
 GesuchterWert_B <- 0
@@ -767,7 +766,7 @@ dnorm(x = GesuchterWert_X, mean = Mittelwert_mean, sd = Standardabweichung_sd)
 
 
 # pnorm Verteilungsfunktion F(q|mean, sd) ----
-# Werte abf?llen
+# Werte abfüllen
 GesuchterWert_Q       <- 128
 GesuchterWert_A       <- 131
 GesuchterWert_B       <- 128
@@ -782,7 +781,7 @@ pnorm(q = GesuchterWert_Q ,mean = Mittelwert_mean, sd = Standardabweichung_sd)
 # P(Xn >= q)
 1-pnorm(q = GesuchterWert_Q ,mean = Mittelwert_mean, sd = Standardabweichung_sd)
 
-# Wahrscheinlichkeit f?r alle Werte unter einem bestimmten Wert q
+# Wahrscheinlichkeit für alle Werte unter einem bestimmten Wert q
 # P(Xn > q)
 1-pnorm(q = GesuchterWert_Q ,mean = Mittelwert_mean, sd = Standardabweichung_sd)
 
@@ -801,12 +800,12 @@ Quantil <- 0.998
 Mittelwert <- 10
 Standardabweichung <- 0.1
 
-# Beispiel: Unter welcher L?nge liegen 99,8% der Stifte
+# Beispiel: Unter welcher Länge liegen 99,8% der Stifte
 # lower.tail = TRUE ist der Standard und wird bei der suche nach oberen grenzen verwendet
 qnorm(p=Quantil, mean = Mittelwert, sd = Standardabweichung)
 
 
-# Beispiel: Ueber welcher L?nge liegen 99,8% der Stifte
+# Beispiel: Ueber welcher Länge liegen 99,8% der Stifte
 # Mit lower.tail = FALSE wird eine untere Grenze abgefragt!!
 qnorm(p=Quantil,mean=Mittelwert,sd=Standardabweichung, lower.tail = FALSE)
 
@@ -820,7 +819,7 @@ x           <- 379               # gesuchter Wert
 x
 kleinSigma
 # Pruefen ob Approximation funktioniert 
-# (n gen?gend gross oder Stichprobe ausreichend Normalverteilt)
+# (n genügend gross oder Stichprobe ausreichend Normalverteilt)
 sqrt(n*p*(1-p)) # Muss groesser als 3 sein
 
 # Wahrscheinlichkeit, dass genau x auftritt
@@ -840,10 +839,10 @@ pnorm(q = x+0.5 ,mean = my, sd = kleinSigma)
 # dbinom gibt die Dichte.
 # pbinom Gibt die Verteilungsfunktion. 
 # qbinom gibt die Quantile.
-# rbinom generiert eine zuf?lligen Datensatz mit Normalverteilung.
+# rbinom generiert eine zufälligen Datensatz mit Normalverteilung.
 
 # dbinom Wahrscheinlichkeitsdichte f(x|p,n) ----
-# Werte abf?llen
+# Werte abfüllen
 GesuchterWert_X      <- 10
 GesuchterWert_A      <- 0
 GesuchterWert_B      <- 0
@@ -861,7 +860,7 @@ dbinom(x=GesuchterWert_X,size=AnzahlElemente_N,prob = Wahrscheinlichkeit_P)
 round(dbinom(x=Intervall,size=AnzahlElemente_N,prob = Wahrscheinlichkeit_P), AnzahlNachkommaSt.)
 
 # pbinom Verteilungsfunktion F(q|p,n) ----
-# Werte abf?llen
+# Werte abfüllen
 GesuchterWert_Q <- 10
 GesuchterWert_A <- 1
 GesuchterWert_B <- 8
@@ -872,7 +871,7 @@ Wahrscheinlichkeit_P <- 0.5
 # P(Xb <= q) -> Fb(x|p;n)
 pbinom(q = GesuchterWert_Q, size = AnzahlElemente_N, prob = Wahrscheinlichkeit_P)
 
-# Wahrscheinlichkeit f?r alle Werte unter einem bestimmten Wert q
+# Wahrscheinlichkeit für alle Werte unter einem bestimmten Wert q
 # Bsp. Alle verworfenen Elemente unterhalb einer Grenze
 # P(Xn > q)
 1-pbinom(q = GesuchterWert_Q, size = AnzahlElemente_N, prob = Wahrscheinlichkeit_P)
@@ -894,19 +893,19 @@ AnzahlElemente_N     <- 10
 Wahrscheinlichkeit_P <- 0.5
 Lower_Tail           <- TRUE  # TRUE = Standard (obere Grenze)
 
-# Beispiel: Unter welcher L?nge liegen 99,8% der Stifte
+# Beispiel: Unter welcher Länge liegen 99,8% der Stifte
 # lower.tail = TRUE ist der Standard und wird bei der suche nach oberen grenzen verwendet
 qbinom(p=Quantil_P,size=AnzahlElemente_N, prob=Wahrscheinlichkeit_P, lower.tail = TRUE)
 
 
-# Beispiel: Ueber welcher L?nge liegen 99,8% der Stifte
+# Beispiel: Ueber welcher Länge liegen 99,8% der Stifte
 # Mit lower.tail = FALSE wird eine untere Grenze abgefragt!!
 qbinom(p=Quantil_P,size=AnzahlElemente_N, prob=Wahrscheinlichkeit_P, lower.tail = FALSE, log.p = FALSE)
 
 # Diagramme ----
 # Balkendiagramm aus Zufallszahlen (diskret)
 xVect <- 0:10 # Vektor der Zahlen (0, 1, 2, ..., 10)
-fVect <- dbinom(xVect, size=10, prob=0.2) # f(x) f?r x aus {0, 1, ..., 10}
+fVect <- dbinom(xVect, size=10, prob=0.2) # f(x) für x aus {0, 1, ..., 10}
 barplot(
   fVect,
   names.arg=xVect, # Skalierung der x-Achse mit den Werten 0, 1, ..., 10
@@ -917,7 +916,7 @@ barplot(
 
 # Treppendiagramm aus Zufallszahlen (diskret)
 xVect <- 0:10 # Vektor der Zahlen (0, 1, 2, ..., 10)
-FVect <- pbinom(xVect, size=10, prob=0.2) # F(x) f?r x aus {0, 1, ..., 10}
+FVect <- pbinom(xVect, size=10, prob=0.2) # F(x) für x aus {0, 1, ..., 10}
 plot(
   xVect,
   FVect,
@@ -964,7 +963,7 @@ erwarteteAnzahlAnEreignissenX <- 0
 erwartungswert <- 5
 eulerischeZahl <- exp(1)
 
-# Formel f?r die Dichtefunktion
+# Formel für die Dichtefunktion
 # in R:
 dpois(erwarteteAnzahlAnEreignissenX, erwartungswert)
 
@@ -974,7 +973,7 @@ dpois(erwarteteAnzahlAnEreignissenX, erwartungswert)
 exp(1)^-erwartungswert
 
 # Diagramme ausgeben
-bereichVonXDefinieren <- 0:20 # Bereich der Ausgabe definieren. Ist abh?ngig von der Verteilung. Am besten einen Bereich um den Erwartungswert nehmen!!
+bereichVonXDefinieren <- 0:20 # Bereich der Ausgabe definieren. Ist abhängig von der Verteilung. Am besten einen Bereich um den Erwartungswert nehmen!!
 titel <- "Titel"
 xAchse <- 'Anzahl'
 yAchse <- 'Wahrscheinlichkeit'
@@ -1030,7 +1029,7 @@ prop.test(
   brilleTab,
   conf.level=0.95
 )
-remove(brilleTab) # aufr?umen
+remove(brilleTab) # aufräumen
 
 ################################## Hypothesentests ################
 # Datensatz laden
@@ -1050,8 +1049,8 @@ rm(daten)
 # Zur Durchführung eines Anteilstests in R muss eine Variable als zweiwertiger Faktor definiert sein;
 # zudem muss die uns interessierende Eigenschaft der erste der beiden Werte der Variable sein.
 # Als Beispiel wollen wir aufgrund des Datensatzes "daten" mit 10 Beobachtungen und der Variable "haarfarbe" 
-# mit den Werten "schwarz", "braun", "blond", "rot" in der angegebenen Reihenfolge auf dem Signifikanzniveau ??=0.05 testen, 
-# ob es plausibel ist, dass der Anteil von Personen mit brauner Haarfarbe in der Gesamtheit 60% betr?gt (Nullhypothese). 
+# mit den Werten "schwarz", "braun", "blond", "rot" in der angegebenen Reihenfolge auf dem Signifikanzniveau =0.05 testen, 
+# ob es plausibel ist, dass der Anteil von Personen mit brauner Haarfarbe in der Gesamtheit 60% beträgt (Nullhypothese). 
 # Dazu erzeugen wir mit Hilfe von "haarfarbe"zuerst eine neue Indikator-Variable "braunInd", welche angibt, ob jemand braune Haare hat:
 datenGewicht$braunInd <- ifelse(
   datenGewicht$haarfarbe == "braun",
@@ -1069,28 +1068,28 @@ table( # Kontrolle der Variable "braunInd": Kreuztabelle mit "haarfarbe"
   datenGewicht$haarfarbe
 )
 
-# Der Anteilstest kann aber nicht direkt auf der Variable "braunInd" durchgef?hrt werden.
-# Stattdessen wird zuerst eine Tabelle erzeugt (und gespeichert), welche die absoluten H?ufigkeiten der Werte von "braunInd" z?hlt. 
-# Mit dieser Tabelle f?hren wir dann zuerst einen (exakten) Binomialtest durch:
+# Der Anteilstest kann aber nicht direkt auf der Variable "braunInd" durchgeführt werden.
+# Stattdessen wird zuerst eine Tabelle erzeugt (und gespeichert), welche die absoluten Häufigkeiten der Werte von "braunInd" zählt. 
+# Mit dieser Tabelle führen wir dann zuerst einen (exakten) Binomialtest durch:
 braunTab <- table( # Tabelle erzeugen (wird von R nicht angezeigt)
   datenGewicht$braunInd
 )
 
-binom.test( # Binomialtest durchf?hren
+binom.test( # Binomialtest durchführen
   braunTab,
   p=0.6, #Anteil, auf welchen getestet werden soll
   alternative = "two.sided", # zweiseitiger Test
   conf.level = 0.95
 )
-rm(braunTab) # aufr?umen
+rm(braunTab) # aufräumen
 
 # Binomialtest einer Menge, welche nicht als Datensatz vorhanden ist:
 # Bsp. Einen Datensatz von n=30 und einem Erwartungswert von 0.5. Dabei sind 25 Ja und 5 nein:
 binom.test(25,30,0.5,alternative="two.sided",conf.level=0.95)
 
-# Der Binomialtest liefert f?r kleine Stichproben exakte p-Werte, kann aber f?r grosse Stichproben sehr rechenintensiv und zeitaufwendig werden 
-# (allerdings ist das mit den heutigen Rechnern ?blicherweise kein grosses Problem mehr). 
-# F?r sehr grosse Stichproben ist deshalb der Anteilstest prop.test(), basierend auf einer N?herung durch eine Normalverteilung, sinnvoll:
+# Der Binomialtest liefert für kleine Stichproben exakte p-Werte, kann aber für grosse Stichproben sehr rechenintensiv und zeitaufwendig werden 
+# (allerdings ist das mit den heutigen Rechnern üblicherweise kein grosses Problem mehr). 
+# Für sehr grosse Stichproben ist deshalb der Anteilstest prop.test(), basierend auf einer Näherung durch eine Normalverteilung, sinnvoll:
 braunTab <- table(
   datenGewicht$braunInd
 )
@@ -1101,27 +1100,27 @@ prop.test(
   alternative = "two.sided",
   conf.level = 0.95
 )
-rm(braunTab) # aufr?umen
+rm(braunTab) # aufräumen
 
 ################################################################################ t-Tests
 # Einstichproben-t-Test
-# Wollen wir beispielsweise aufgrund der Variable "groesse" (K?rpergr?sse in cm) im Datensatz "daten" auf dem Signifikanzniveau ??=0.1 testen,
-# ob in der Gesamtheit der Mittelwert der K?rpergr?sse gr?sser als 170 cm ist 
-# (d.h. die Nullhypothese w?re "Mittelwert der K?rpergr?sse ist h?chstens 170 cm"), geben wir das Folgende ein:
+# Wollen wir beispielsweise aufgrund der Variable "groesse" (Körpergrösse in cm) im Datensatz "daten" auf dem Signifikanzniveau =0.1 testen,
+# ob in der Gesamtheit der Mittelwert der Körpergrösse grösser als 170 cm ist 
+# (d.h. die Nullhypothese wäre "Mittelwert der Körpergrösse ist höchstens 170 cm"), geben wir das Folgende ein:
 t.test(
   datenGewicht$groesse,
   alternative = "greater", # rechtseitiger Test
   mu=170, # postulierter Mittelwert mu_0 in der Gesamtheit
-  conf.level = .9 # Konfidenzniveau 1-alpha f?r das Konf.intervall der Mittelwerts
+  conf.level = .9 # Konfidenzniveau 1-alpha für das Konf.intervall der Mittelwerts
 )
 
 # Ungepaarter Zweistichproben-t-Test
-# Wollen wir beispielsweise aufgrund der Variablen "geschlecht" (Faktor; 1 = "m?nnlich", 2 = "weiblich") 
-# und "groesse" (K?rpergr?sse in cm) im Datensatz "daten" auf dem Signifikanzniveau ??=0.05 testen, 
-# ob sich in der Gesamtheit die Mittelwerte der K?rpergr?sse zwischen den beiden Geschlechtern unterscheiden 
-# (d.h. die Nullhypothese w?re, dass sich die Mittelwerte in der Gesamtheit nicht voneinander unterscheiden), geben wir Folgendes ein
+# Wollen wir beispielsweise aufgrund der Variablen "geschlecht" (Faktor; 1 = "männlich", 2 = "weiblich") 
+# und "groesse" (Körpergrösse in cm) im Datensatz "daten" auf dem Signifikanzniveau =0.05 testen, 
+# ob sich in der Gesamtheit die Mittelwerte der Körpergrösse zwischen den beiden Geschlechtern unterscheiden 
+# (d.h. die Nullhypothese wäre, dass sich die Mittelwerte in der Gesamtheit nicht voneinander unterscheiden), geben wir Folgendes ein
 t.test(
-  groesse~geschlecht, # Formeleingabe, zu interpretieren als "groesse in Abh?ngigkeit von geschlecht"
+  groesse~geschlecht, # Formeleingabe, zu interpretieren als "groesse in Abhängigkeit von geschlecht"
   alternative = "two.sided", # zweiseitiger Test
   conf.level=.95, # Konfidenzniveau 1-alpha fpr das Konf.intervall der Differenz der Mittelwerte
   data=datenGewicht # Damit R weiss, wo es die Variablen suchen soll
@@ -1129,23 +1128,23 @@ t.test(
 
 # Gepaarter Zweistichproben-t-Test (Paardifferenzen-Test)
 # Angenommen, wir wollen die Wirkung eines blutdrucksenkenden Medikamentes auf dem 
-# Signifikanzniveau ??=0.01 testen und messen dazu den systolischen Blutdruck vor der 
+# Signifikanzniveau =0.01 testen und messen dazu den systolischen Blutdruck vor der 
 # Medikamentenabgabe (Variable "blutdruckVor") und danach (Variable "blutdruckNach"). 
-# Die Nullhypothese w?re, dass kein Effekt auftritt, dass also der Mittelwert der 
+# Die Nullhypothese wäre, dass kein Effekt auftritt, dass also der Mittelwert der 
 # Blutdruckdifferenz in allen je dieses Medikament verwendenden Personen gleich Null ist. 
 # Dazu geben wir Folgendes ein:
 t.test(
   datenBlutdruck$blutdruckVor,
   datenBlutdruck$blutdruckNach,
   alternative = "two.sided", # zweiseitiger Test
-  conf.level = .99, # Kongidenzniveau 1-alpha f?r das Konf.intervall der mittleren Differenz
+  conf.level = .99, # Kongidenzniveau 1-alpha für das Konf.intervall der mittleren Differenz
   paired = TRUE # gepaarter Test
 )
 
 ################################################################################ Chiquadrat-Tests
 # Chiquadrat-Anpassungstest
 # Wollen wir beispielsweise aufgrund der (Faktor-)Variable "haarfarbe" mit den Werten 
-# "schwarz", "braun", "blond" und "rot" im Datensatz "daten" testen, ob die Haarfarbe in der Bev?lkerung der 
+# "schwarz", "braun", "blond" und "rot" im Datensatz "daten" testen, ob die Haarfarbe in der Bevölkerung der 
 # diskreten Verteilung P("schwarz") = 0.15, P("braun") = 0.6, P("blond") = 0.2 und P("rot") = 0.05 folgt (Nullhypothese), 
 # geben wir das Folgende ein:
 haarTab <- table( # Tabelle von "haarfarbe" erzeugen (wird von R nicht angezeigt)
@@ -1155,13 +1154,13 @@ chisq.test(
   haarTab,
   p=c(0.15,0.6,0.2,0.05) # vorgegebene Verteilung (gleiche Reihenfolge wie Werte von "haarfarbe")
 )
-rm(haarTab) # Aufr?umen
+rm(haarTab) # Aufräumen
 show(datenGewicht)
 
 # Chiquadrat-Unabhaengigkeitstest
-# Angenommen, wir wollen anhand der beiden (Faktor-)Variablen "geschlecht" (1 = "m?nnlich", 2 = "weiblich") 
+# Angenommen, wir wollen anhand der beiden (Faktor-)Variablen "geschlecht" (1 = "männlich", 2 = "weiblich") 
 # und "haarfarbe" (Werte "schwarz", "braun", "blond" und "rot") im Datensatz "daten" testen, 
-# die Haarfarbe unter M?nnern und Frauen dieselbe Verteilung hat (Nullhypothese). 
+# die Haarfarbe unter Männern und Frauen dieselbe Verteilung hat (Nullhypothese). 
 # Dazu geben wir Folgendes ein:
 geschlHaarTab <- table( # Kreuztabelle "haarfarbe" vs "geschlecht" erzeugen (wird von R nicht angezeigt)
   datenGewicht$geschlecht, # Zeilenvarriable
@@ -1171,13 +1170,13 @@ show(geschlHaarTab)
 chisq.test( # Chiquadrat-Test durchfuehren
   geschlHaarTab
 )
-rm(geschlHaarTab) # aufr?umen
+rm(geschlHaarTab) # aufräumen
 
 round(1-dbinom(x=c(1:20),size=20,prob = 0.25),3)
 
 # Balkendiagramm aus Zufallszahlen (diskret)
 xVect <- 1:20 # Vektor der Zahlen (0, 1, 2, ..., 10)
-fVect <- dbinom(x=c(1:20),size=20,prob = 0.25) # f(x) f?r x aus {0, 1, ..., 10}
+fVect <- dbinom(x=c(1:20),size=20,prob = 0.25) # f(x) für x aus {0, 1, ..., 10}
 barplot(
   fVect,
   names.arg=xVect, # Skalierung der x-Achse mit den Werten 0, 1, ..., 10
@@ -1188,7 +1187,7 @@ barplot(
 
 # Balkendiagramm aus Zufallszahlen (diskret)
 xVect <- 0:20 # Vektor der Zahlen (0, 1, 2, ..., 20)
-fVect <- pbinom(q=c(0:20),size=20, prob=0.25) # f(x) f?r x aus {0, 1, ..., 20}
+fVect <- pbinom(q=c(0:20),size=20, prob=0.25) # f(x) für x aus {0, 1, ..., 20}
 barplot(
   fVect,
   names.arg=xVect, # Skalierung der x-Achse mit den Werten 0, 1, ..., 20
@@ -1202,7 +1201,7 @@ dbinom(x=c(0:20),size=20,prob = 0.25)
 
 # Balkendiagramm aus Zufallszahlen (diskret)
 xVect <- 1:20 # Vektor der Zahlen (0, 1, 2, ..., 20)
-Vect <- pbinom(q=c(0:20),size=100, prob=0.8) # f(x) f?r x aus {0, 1, ..., 20}
+Vect <- pbinom(q=c(0:20),size=100, prob=0.8) # f(x) für x aus {0, 1, ..., 20}
 barplot(
   fVect,
   names.arg=xVect, # Skalierung der x-Achse mit den Werten 0, 1, ..., 20
@@ -1271,14 +1270,14 @@ tab
 # Methode 3: Einzeilige Tabelle erstellen
 tab <- matrix(c(14,6), ncol=2, byrow=TRUE)
 colnames(tab) <- c('Kopf','Zahl')
-rownames(tab) <- c('M?nze')
+rownames(tab) <- c('Münze')
 tab <- as.table(tab)
 show(tab)
 rm(tab)
 
 # Methode 4: Einspaltige Tabelle erstellen
 tab <- matrix(c(15,5), ncol=1, byrow=TRUE)
-colnames(tab) <- c('M?nze')
+colnames(tab) <- c('Münze')
 rownames(tab) <- c('kopf','Zahl')
 tab <- as.table(tab)
 show(tab)
@@ -1307,7 +1306,7 @@ n_binom * p_binom
 
 # Anzeigen der Binomialverteilung in einem Balkendiagramm wenn H0 effektiv wahr waehre
 xVect <- 1:n_binom # Vektor der Zahlen (0, 1, 2, ..., n)
-fVect <- dbinom(x=x_binom,size=n_binom,prob = p_binom) # f(x) f?r x aus {0, 1, ..., n}
+fVect <- dbinom(x=x_binom,size=n_binom,prob = p_binom) # f(x) für x aus {0, 1, ..., n}
 barplot(
   fVect,
   names.arg=xVect, # Skalierung der x-Achse mit den Werten 0, 1, ..., n
@@ -1401,13 +1400,13 @@ show(daten)
 
 # Variablen abfuellen:
 abhaengigeVar <- daten$gewicht # Abhaengige Variable des Datensatzes
-abhaengigString <- "gewicht" # Genaue Bezeichung der abh?ngigen Variable Bsp. Gewicht
+abhaengigString <- "gewicht" # Genaue Bezeichung der abhängigen Variable Bsp. Gewicht
 unabhaengigeVar <- daten$groesse # Unabhaengige Variable
 unabhaengigString <- "groesse" # Genaue Bezeichnung der unabhaengigen Variable Bsp. Koerpergroesse
 korrelationskoeffizient <- cor(unabhaengigeVar, abhaengigeVar)
 
 abhaengigVsunabhaengig <- lm( # Regressionsmodell speichern (lm = linear model)
-  abhaengigeVar~unabhaengigeVar, # gewicht in Abh?ngigkeit von groesse darstellen
+  abhaengigeVar~unabhaengigeVar, # gewicht in Abhängigkeit von groesse darstellen
   data=daten
 )
 # (Intercept)       /   Estimate          = a
@@ -1439,28 +1438,28 @@ lines( # Glaettungskurve einzeichnen
 tempDaten <- daten[order(daten$groesse), ]
 show(tempDaten)
 predictMatrix <- predict( # vorausgesagte Werte erzeugen
-  abhaengigVsunabhaengig, # f?r die Voraussage benutztes Modell
-  interval="confidence", # Konf.intervall f?r vorausgesagte Werte berechnen
+  abhaengigVsunabhaengig, # für die Voraussage benutztes Modell
+  interval="confidence", # Konf.intervall für vorausgesagte Werte berechnen
   tempDaten # Voraussage von "groesse" aufgrund von "gewicht" in tempDaten
 )
 plot( # Streudiagramm erzeugen, mit nach "groesse" sortierten Daten
   tempDaten$groesse,
   tempDaten$gewicht,
-  xlab="K?rpergr?sse [cm]",
+  xlab="Körpergrösse [cm]",
   ylab="Gewicht [kg]"
 )
  matlines()
 matlines( # vorausgesagte Werte und Konf.intervall einzeichnen
   # (matlines = matrix lines)
-  tempDaten$groesse, # unabh?ngige Variable ("x-Werte")
-  predictMatrix, # abh?ngige Werte ("y-Werte")
+  tempDaten$groesse, # unabhängige Variable ("x-Werte")
+  predictMatrix, # abhängige Werte ("y-Werte")
     lty=c("solid", "dashed", "dashed"), # Linientypen
     col="black" # Linienfarben
   )
 
 # Automatische Erstellung von Korrelations-Diagramm
 # Datensatz erstellen
-rm(daten) # alte daten l?schen falls vorhanden
+rm(daten) # alte daten löschen falls vorhanden
 
 load('/Users/achim/GitHub/RStudioProjects/FFHS_WS/datensatz3.RData') #Import .RData File
 
@@ -1484,7 +1483,7 @@ unabhaengigString <- "Groesse" # Genaue Bezeichnung der unabhaengigen Variable B
 
 korrelationskoeffizient <- cor(unabhaengigeVar, abhaengigeVar)
 
-# Funktion f?r ein Diagramm mit der Regressiongeraden und einer Glaetungskurve
+# Funktion für ein Diagramm mit der Regressiongeraden und einer Glaetungskurve
 korrelationsGeradeUndGlaettungskurve <- function(dat, abhaengigeVar, unabhaengigeVar, textAbhaengigerVar, textUnabhaengigerVar, korrelationskoeffizient){
   
   var1VsVar2 <- lm( # Regressionsmodell speichern (lm = linear model)
@@ -1521,5 +1520,5 @@ korrelationsGeradeUndGlaettungskurve <- function(dat, abhaengigeVar, unabhaengig
   )
 }
 
-# Funktion ausf?hren:
+# Funktion ausführen:
 korrelationsGeradeUndGlaettungskurve(daten, abhaengigeVar, unabhaengigeVar, abhaengigString, unabhaengigString, korrelationskoeffizient)
